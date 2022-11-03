@@ -2,6 +2,7 @@ package common.robotBase;
 
 import java.awt.Graphics;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 import common.IConstants;
 
@@ -40,7 +41,18 @@ public class IRobot implements IConstants{
 	 * refresco la pantalla con el graphics
 	 */
 	public void move(MOVEMENT pMove, LocalTime pActionTime, Graphics g) {
-		// put your code here
+		int move= pMove.getValue();
+		int timeDif = (int)ChronoUnit.MILLIS.between(pActionTime, LocalTime.now());
+		if(move==0){ //left
+			posX-= ROBOT_MOVEMENT_LENGTH*timeDif;
+		}else if(move==1){ //right
+			posX+= ROBOT_MOVEMENT_LENGTH*timeDif;
+		}else if(move==2){ //up
+			posY-= ROBOT_MOVEMENT_LENGTH*timeDif;
+		}else if(move==3){ //down
+			posY+= ROBOT_MOVEMENT_LENGTH*timeDif;
+		}
+		energy-=ENERGY_PER_MOVEMENT;
 	}
 	
 	public void hit(int pStrikeId, LocalTime pActionTime, Graphics g ) {
