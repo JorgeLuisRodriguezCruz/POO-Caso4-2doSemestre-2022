@@ -1,4 +1,4 @@
-package common;
+package common.robotBase;
 
 public class DamageLevel {
 	private double level;
