@@ -41,22 +41,11 @@ public class IRobot implements IConstants{
 	 * refresco la pantalla con el graphics
 	 */
 	public void move(MOVEMENT pMove, LocalTime pActionTime, Graphics g) {
-		int move= pMove.getValue();
-		int timeDif = (int)ChronoUnit.MILLIS.between(pActionTime, LocalTime.now());
-		if(move==0){ //left
-			posX-= ROBOT_MOVEMENT_LENGTH*timeDif;
-		}else if(move==1){ //right
-			posX+= ROBOT_MOVEMENT_LENGTH*timeDif;
-		}else if(move==2){ //up
-			posY-= ROBOT_MOVEMENT_LENGTH*timeDif;
-		}else if(move==3){ //down
-			posY+= ROBOT_MOVEMENT_LENGTH*timeDif;
-		}
-		energy-=ENERGY_PER_MOVEMENT;
+		// put your code here
 	}
 	
 	public void hit(int pStrikeId, LocalTime pActionTime, Graphics g ) {
-		
+		this.weapons[pStrikeId].fire(this.posX, this.posY, this.currentOrientation);		
 	}
 	
 	public void fire(int pWeaponId, LocalTime pActionTime, Graphics g) {
