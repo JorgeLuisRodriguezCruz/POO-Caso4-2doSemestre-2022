@@ -3,9 +3,9 @@ package common;
 import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
 
-public class tijeraVoladora extends Weapon {
+public class TijeraVoladora extends Weapon {
 
-	public tijeraVoladora(int pSpeed, int pNivel) {
+	public TijeraVoladora(int pSpeed, int pNivel) {
 		super(pSpeed, pNivel);
 	}
 

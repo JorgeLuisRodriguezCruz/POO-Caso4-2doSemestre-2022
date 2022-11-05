@@ -1,10 +1,13 @@
 package test;
 
+import controller.ControllerArena;
+import vista.PantallaArena;
+
 public class Main {
 
 	public static void main(String[] args) {
-		//ControllerArena controlador = new ControllerArena();
-		//PantallaArena vista = new PantallaArena("Titulo de ejemplo", controlador);
+		ControllerArena controlador = new ControllerArena();
+		PantallaArena vista = new PantallaArena("Titulo de ejemplo", controlador);
 
 	}
 
