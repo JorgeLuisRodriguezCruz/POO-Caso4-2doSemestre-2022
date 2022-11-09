@@ -2,30 +2,41 @@ package common;
 
 import java.awt.Graphics;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 
 import common.robotBase.DamageLevel;
 import common.robotBase.MOVEMENT;
+import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
 
-public class IRobot implements IConstants{
-	private int energy;
-	private int posX;
-	private int posY;
-	private int strikeIndex;
-	private int weaponIndex;
-	private Weapon weapons[];
-	private Weapon strikes[];
-	private DamageLevel directionsdamage[];
+public abstract class IRobot implements IConstants {
+	protected int energy;
+	protected int posX;
+	protected int posY;
+	protected int strikeIndex;
+	protected int weaponIndex;
+	protected int speed;
+	protected Weapon weapons[];
+	protected Weapon strikes[];
+	protected DamageLevel directionsdamage[];
+	protected ORIENTATION currentOrientation;
+
+	public IRobot() {
+		this(ORIENTATION.EAST, ROBOT_SPEED_DEFAULT);
+	}
 	
-	public IRobot(Weapon pdirections, DamageLevel pweapons) {
+	public IRobot(ORIENTATION pOrientation, int pSpeed) {
 		directionsdamage = new DamageLevel[MOVEMENT.values().length];
 		weapons = new Weapon[WEAPONS_PER_ROBOT];
 		strikes = new Weapon[STRIKES_PER_ROBOT];
 		
-		strikeIndex = 0;
-		weaponIndex = 0;
+		this.currentOrientation = pOrientation;
+		
+		this.strikeIndex = 0;
+		this.weaponIndex = 0;
+		this.speed = pSpeed;
 	}
+	
+	
 	
 	/*
 	 * el move es la dirección que el jugador está presionando, con eso y la hora del accion
@@ -36,26 +47,18 @@ public class IRobot implements IConstants{
 	 * refresco la pantalla con el graphics
 	 */
 	public void move(MOVEMENT pMove, LocalTime pActionTime, Graphics g) {
-		int Move= pMove.getValue();
-		int TimeDif = (int)ChronoUnit.MILLIS.between(pActionTime, LocalTime.now());
-		if(Move==0){ //left
-			posX-= ROBOT_MOVEMENT_LENGTH*TimeDif;
-		}else if(Move==1){ //right
-			posX+= ROBOT_MOVEMENT_LENGTH*TimeDif;
-		}else if(Move==2){ //up
-			posY-= ROBOT_MOVEMENT_LENGTH*TimeDif;
-		}else if(Move==3){ //down
-			posY+= ROBOT_MOVEMENT_LENGTH*TimeDif;
-		}
-		energy-=ENERGY_PER_MOVEMENT;
+		// put movement global code here
+		refreshMove(pMove, pActionTime, g);		
 	}
 	
+	protected abstract void refreshMove(MOVEMENT pMove, LocalTime pActionTime, Graphics g);
+	
 	public void hit(int pStrikeId, LocalTime pActionTime, Graphics g ) {
-		
+		this.weapons[pStrikeId].fire(this.posX, this.posY, this.currentOrientation);		
 	}
 	
 	public void fire(int pWeaponId, LocalTime pActionTime, Graphics g) {
-		
+		this.weapons[pWeaponId].fire(this.posX, this.posY, this.currentOrientation);
 	}
 	
 	/*
@@ -77,5 +80,5 @@ public class IRobot implements IConstants{
 		weapons[weaponIndex] = pStrike;
 		weaponIndex=++weaponIndex%WEAPONS_PER_ROBOT;
 	}
-
+	
 }
