@@ -5,8 +5,8 @@ import common.robotBase.Weapon;
 
 public class TijeraVoladora extends Weapon {
 
-	public TijeraVoladora(int pSpeed, int pNivel) {
-		super(pSpeed, pNivel);
+	public TijeraVoladora(int pSpeed, int pNivel, int pAlcanse) {
+		super(pSpeed, pNivel, pAlcanse);
 	}
 
 	@Override
