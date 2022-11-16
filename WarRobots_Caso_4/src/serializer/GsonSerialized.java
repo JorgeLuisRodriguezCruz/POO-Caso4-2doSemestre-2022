@@ -2,6 +2,7 @@ package serializer;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.GsonBuilder;
@@ -16,6 +17,10 @@ import common.robotBase.Weapon;
 public class GsonSerialized {
 	
 	public GsonSerialized() {
+		
+		ArrayList <Weapon> arcenal = new ArrayList <Weapon>();
+		IRobot p;
+		
 		Gson gson = new GsonBuilder()
 	            .setPrettyPrinting()
 	            .serializeNulls()
@@ -36,7 +41,7 @@ public class GsonSerialized {
 		
 		//Deserializado
 		try {
-			IRobot p = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\Robot.json"), IRobot.class);
+			p = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\Robot.json"), IRobot.class);
 		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
 			e.printStackTrace();
 		}

@@ -5,8 +5,8 @@ import common.robotBase.Weapon;
 
 public class lanzaLlamas extends Weapon {
 
-	public lanzaLlamas(int pSpeed, int pLevel) {
-		super(pSpeed, pLevel);
+	public lanzaLlamas(int pSpeed, int pLevel, int pAttackDistance) {
+		super(pSpeed, pLevel, pAttackDistance);
 	}
 
 	@Override
