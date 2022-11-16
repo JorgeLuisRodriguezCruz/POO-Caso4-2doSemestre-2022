@@ -1,6 +1,9 @@
 package robots;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.time.LocalTime;
 
 import common.robotBase.DamageLevel;
@@ -22,7 +25,11 @@ public class IshimuraKiller2001 extends IRobot {
 	@Override
 	protected void refreshMove(MOVEMENT pMove, LocalTime pActionTime, Graphics g) {
 		// TODO Auto-generated method stub
-		
+		Graphics2D g2D = (Graphics2D) g;//Conversion from g to g2D
+
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image Robot = toolkit.getImage("Ruffus.png");
+        //g2D.drawImage(Robot, x,y,this);
 	}
 	
 	
