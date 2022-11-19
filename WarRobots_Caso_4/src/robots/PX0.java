@@ -3,8 +3,8 @@ package robots;
 import java.awt.Graphics;
 import java.time.LocalTime;
 
-import common.IRobot;
 import common.robotBase.DamageLevel;
+import common.robotBase.IRobot;
 import common.robotBase.MOVEMENT;
 import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
@@ -18,8 +18,6 @@ public class PX0 extends IRobot{
 
 	@Override
 	public void damage(int pLevel) {
-		this.currentOrientation=ORIENTATION.;
+		this.currentOrientation=ORIENTATION.EAST;
 	}
-	
-	
 }

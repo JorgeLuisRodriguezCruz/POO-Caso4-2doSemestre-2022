@@ -24,7 +24,4 @@ public class IshimuraKiller2001 extends IRobot {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
 }

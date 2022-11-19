@@ -83,5 +83,4 @@ public class SocketClient extends Thread {
 			
 		}
 	}
-	
 }

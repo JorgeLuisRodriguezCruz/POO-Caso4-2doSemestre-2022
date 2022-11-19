@@ -1,6 +1,8 @@
 package test;
 
-import Interface.UIWindow;
+import java.util.Arrays;
+
+import UI.UIWindow;
 import controller.ControllerArena;
 import serializer.GsonSerialized;
 import vista.PantallaArena;
@@ -12,9 +14,15 @@ public class Main {
 		//PantallaArena vista = new PantallaArena("Titulo de ejemplo", controlador);
 		
 		//GsonSerialized g=new GsonSerialized();
+		System.out.println("Di las palabras.");
 		
-		UIWindow ejemplo = new UIWindow();
-		ejemplo.Simular();
+		int clave_prueba = 12;
+		int bandera = -1;
+		
+		//int [] int_array = {1, 5, 55, 13, 14};
+		//Arrays.stream(int_array).filter(x->x==clave_prueba).forEach(x->bandera=0);
+		
+		//UIWindow ejemplo = new UIWindow();
+		//ejemplo.Simular();
 	}
-
 }

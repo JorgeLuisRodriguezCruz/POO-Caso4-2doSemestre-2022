@@ -14,7 +14,7 @@ public class WeaponsFactory {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			result = new lanzaLlamas(pSpeed,pLevel);
+			result = new LanzaLlamas(pSpeed, pLevel, 15);
 		}
 		
 		return result;

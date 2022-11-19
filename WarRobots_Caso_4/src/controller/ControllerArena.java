@@ -36,5 +36,4 @@ public class ControllerArena extends Thread {
 		}
 		this.controlledFrame.refrescar();
 	}
-	
 }

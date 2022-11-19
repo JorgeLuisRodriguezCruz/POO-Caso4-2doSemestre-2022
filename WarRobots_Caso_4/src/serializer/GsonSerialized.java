@@ -10,7 +10,7 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.Gson;
 
-import common.IRobot;
+import common.robotBase.IRobot;
 import common.robotBase.Weapon;
 
 
@@ -22,10 +22,10 @@ public class GsonSerialized {
 		IRobot p;
 		
 		Gson gson = new GsonBuilder()
-	            .setPrettyPrinting()
-	            .serializeNulls()
+	            	.setPrettyPrinting()
+	            	.serializeNulls()
 	            //.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-	            .create();
+	            	.create();
 		
 		
 		//Serializado
@@ -40,6 +40,7 @@ public class GsonSerialized {
 		
 		
 		//Deserializado
+		
 		try {
 			p = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\Robot.json"), IRobot.class);
 		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
@@ -47,6 +48,6 @@ public class GsonSerialized {
 		}
 		
 		
+		
 	}
-	
 }
