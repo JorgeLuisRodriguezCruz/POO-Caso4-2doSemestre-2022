@@ -29,23 +29,30 @@ public class PantallaArena extends JFrame implements KeyListener{
 		this.controller = pController;
 		this.controller.setWindow(this);
 		this.figuras = new ArrayList <JLabel> ();
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setBackground(Color.WHITE);
+		this.setSize(1080, 720);
+		//this.setLayout(null);
 
+		/*
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setBounds(0, 0, 1080, 720);
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
 		this.setBackground(Color.white);
+		*/
 		this.initComponents();
 		
-		this.setVisible(true);		
+		//this.setVisible(true);		
 	}
     
     private void initComponents() {
-    	JLabel labelEjemplar = new JLabel("Label ejemplar");
+    	/*JLabel labelEjemplar = new JLabel("Label ejemplar");
     	labelEjemplar.setBounds(10, 20, 160, 20);
     	this.add(labelEjemplar);
-    	this.figuras.add(labelEjemplar);
+    	this.figuras.add(labelEjemplar);*/
     	
     	
     	this.robot = new JLabel("Esta se deberia de mover");
