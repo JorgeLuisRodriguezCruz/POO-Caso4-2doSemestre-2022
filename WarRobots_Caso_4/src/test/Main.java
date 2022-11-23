@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import UI.UIWindow;
-import controller.ControllerArena;
 import serializer.GsonSerialized;
-import vista.PantallaArena;
 
 public class Main {
 

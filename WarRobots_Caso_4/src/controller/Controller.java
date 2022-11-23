@@ -4,7 +4,6 @@ import javax.swing.JLabel;
 
 import vista.PanelRobot;
 import vista.Pantalla;
-import vista.PantallaArena;
 
 public class Controller {
 	private Pantalla controlledFrame;
@@ -25,7 +24,7 @@ public class Controller {
 		switch (pCodigo) {
 			case 37: //Izquierda
 				this.controlledFrame.moveRobot(pPanel.getPosicion_X() - 8 , pPanel.getPosicion_Y());//pFigura.setBounds(pFigura.getX() - 8, pFigura.getY(), 250, 20);
-				pPanel.rotar(90);
+				//pPanel.rotar(90);
 				break;
 			case 39: //Derecha
 				this.controlledFrame.moveRobot(pPanel.getPosicion_X() + 8 , pPanel.getPosicion_Y());//pFigura.setBounds(pFigura.getX() + 8, pFigura.getY(), 250, 20);
@@ -33,7 +32,7 @@ public class Controller {
 				break;
 			case 38: //Arriba
 				this.controlledFrame.moveRobot(pPanel.getPosicion_X(), pPanel.getPosicion_Y() - 8);//pFigura.setBounds(pFigura.getX(), pFigura.getY() - 8, 250, 20);
-				//pPanel.rotar(90);
+				pPanel.rotar(100);
 				break;
 			case 40: //Abajo
 				this.controlledFrame.moveRobot(pPanel.getPosicion_X(), pPanel.getPosicion_Y() + 8);//pFigura.setBounds(pFigura.getX(), pFigura.getY() + 8, 250, 20);
