@@ -3,9 +3,11 @@ package robots;
 import java.awt.Graphics;
 import java.lang.reflect.Array;
 import java.time.LocalTime;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import common.IRobot;
 import common.robotBase.DamageLevel;
@@ -16,10 +18,11 @@ import simulation.SimulatorReport;
 import utils.IObserver;
 import utils.Observable;
 
+import com.google.common.primitives.Booleans;
+
 public class PX0 extends IRobot implements IObserver{
-	ArrayList<MOVEMENT>  direcciones;
-	ArrayList<ORIENTATION>  orientacion;
-	int pix_recorridos;
+	int pixRecorridos;
+	int numeroRobot;
 	
 	/*
 	int energy;
@@ -35,33 +38,57 @@ public class PX0 extends IRobot implements IObserver{
 	*/
 	
 	public PX0(){
-		direcciones.add(MOVEMENT.UP);
-		direcciones.add(MOVEMENT.DOWN);
-		direcciones.add(MOVEMENT.RIGHT);
-		direcciones.add(MOVEMENT.LEFT);
-		orientacion.add(ORIENTATION.NORTH);
-		orientacion.add(ORIENTATION.SOUTH);
-		orientacion.add(ORIENTATION.EAST);
-		orientacion.add(ORIENTATION.WEST);
 		
 		DamageLevel up = new DamageLevel();
 		DamageLevel down = new DamageLevel();
 		DamageLevel right = new DamageLevel();
 		DamageLevel left = new DamageLevel();
 		
-		directionsdamage[0]= up;
-		directionsdamage[1]= down;
-		directionsdamage[2]= right;
-		directionsdamage[3]= left;
+		directionsdamage[0]= left;
+		directionsdamage[1]= right;
+		directionsdamage[2]= up;
+		directionsdamage[3]= down;
 	}
 	
 	
 	@Override
 	protected void refreshMove(MOVEMENT pMove, LocalTime pActionTime, Graphics g) {
-		int actTime= LocalTime.now().getSecond()- pActionTime.getSecond();
-		
+		if(directionsdamage[pMove.getValue()].isEnabled()) {
+			
+			int actTime= LocalTime.now().getSecond()- pActionTime.getSecond();
+			int pixMov = actTime*this.speed;
+			
+			int [] arrayX = {-1*pixMov, pixMov, 0, 0};
+			int [] arrayY = {0, 0, -1*pixMov, pixMov};
+			
+			
+			int oldX = posX;
+			int oldY = posY;
+			
+			this.posX += arrayX [pMove.getValue()];
+			this.posY += arrayY [pMove.getValue()];
+			int [] pos = {posX,posY};
+			Arrays.stream(pos).filter(x->x<0).forEach(x->x=0);	
+			if(posX>ARENA_WIDTH) {
+				posX = ARENA_WIDTH;
+			}else if(posY>ARENA_HEIGTH){
+				posY = ARENA_HEIGTH;
+			}
+			
+			
+			pixRecorridos+= Math.abs(posX-oldX)+Math.abs(posY-oldY);
+		}
+		gastoEnergia();
+	}
+
+	private void gastoEnergia() {
+		while(pixRecorridos>=1000) {
+			pixRecorridos-=1000;
+			this.energy-=1;
+		}
 		
 	}
+
 
 	@Override
 	public void damage(int pLevel) {
@@ -92,7 +119,20 @@ public class PX0 extends IRobot implements IObserver{
 	public void update(Observable pObservable, Object args) {
 		SimulatorReport simReport = (SimulatorReport)args;
 		simReport.posX1= posX;
-		simReport.posX1= posY; 
+		simReport.posX1= posY;
+		if(numeroRobot==1) {
+			Stream<Boolean> stream = new AbstractList<Boolean>() {
+				  public Boolean get(int index) {return (simReport.strikes1[index]);}
+				  public int size() {return simReport.strikes1.length;}
+				}.stream();
+			stream.forEach(x-> x= strikes[Booleans.indexOf(simReport.strikes1, x)].isEnabled() ); //
+			//simReport.weapons1=;
+		}else if(numeroRobot==2){
+			
+		}
+		//simReport.strikes1.stream().;
+		//simReport.weapon1=;
+		
 	}
 	
 	
