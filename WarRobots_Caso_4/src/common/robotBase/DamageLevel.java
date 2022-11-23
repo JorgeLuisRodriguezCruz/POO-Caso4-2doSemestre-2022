@@ -15,9 +15,6 @@ public class DamageLevel {
 		return damageLevel;
 	}
 
-	/*
-	 * código cortesía de jose andres
-	 */
 	public void hitDamage(int pLevel) {
 		int[][] array = {{1,2},{3,4,5,6,7,8,9,10}};
 		float [] percent = {1.0f,1.0f,2.0f,0.4f,0.6f,0.3f,0.6f,0.9f,1.0f,1.0f};

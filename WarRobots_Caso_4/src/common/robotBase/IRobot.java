@@ -2,11 +2,10 @@ package common.robotBase;
 
 import java.awt.Graphics;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 
 import common.IConstants;
 
-public abstract class IRobot implements IConstants{
+public abstract class IRobot implements IConstants {
 	protected int energy;
 	protected int posX;
 	protected int posY;
@@ -78,5 +77,5 @@ public abstract class IRobot implements IConstants{
 		weapons[weaponIndex] = pStrike;
 		weaponIndex=++weaponIndex%WEAPONS_PER_ROBOT;
 	}
-
+	
 }

@@ -1,10 +1,6 @@
 package vista;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -20,13 +16,12 @@ import org.w3c.dom.ls.LSOutput;
 
 import controller.ControllerArena;
 
-public class PantallaArena extends JFrame implements KeyListener, ActionListener{
+public class PantallaArena extends JFrame implements KeyListener{
 
 	private static final long serialVersionUID = 1L;
 	private ControllerArena controller;
 	private JLabel robot;
 	private ArrayList <JLabel> figuras;
-	private Graphics2D robotico;
 	
 	public PantallaArena (String pTitle, ControllerArena pController) {
 
@@ -65,12 +60,6 @@ public class PantallaArena extends JFrame implements KeyListener, ActionListener
     	this.revalidate();
     	this.repaint();
     }
-    
-    public void painRobot (Image pImagen, Graphics2D pImagen2d)
-    {
-    	this.robotico = pImagen2d;
-    	this.robotico.drawImage(pImagen, 30, 50, this);
-    }
 
 	@Override
 	public void keyTyped(KeyEvent e) {}
@@ -82,16 +71,5 @@ public class PantallaArena extends JFrame implements KeyListener, ActionListener
 	public void keyReleased(KeyEvent e) {
 		this.remove(this.robot);
 		controller.mover(e.getKeyCode(), this.robot);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		Graphics g = null;
-		Graphics2D g2D = (Graphics2D) g;
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image fireball = toolkit.getImage("C:\\Users\\Usuario\\Documents\\GitHub\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\Ruffus.png");
-        this.painRobot(fireball, g2D);
-		
 	}
 }

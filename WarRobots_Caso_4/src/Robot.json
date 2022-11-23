@@ -1,0 +1,32 @@
+{
+	"Robot":{
+  	"energy":,
+    "posX":,
+    "posY":,
+    "strikeIndex":,
+    "weaponIndex":,
+    "speed":,
+    "weapons":[
+    	{
+      	"posX":,
+        "posY":,
+        "speed":,
+        "level":
+      }
+    ],
+    "strikes":[
+    	{
+      	"posX":,
+        "posY":,
+        "speed":,
+        "level":
+      },
+      {
+      	"posX":,
+        "posY":,
+        "speed":,
+        "level":
+      }
+    ],
+  }
+}
