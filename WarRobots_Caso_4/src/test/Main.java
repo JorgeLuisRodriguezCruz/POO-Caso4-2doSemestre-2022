@@ -3,6 +3,8 @@ package test;
 import Interface.UIWindow;
 import controller.Controller;
 import serializer.GsonSerialized;
+import simulation.Simulator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,6 +21,17 @@ public class Main {
 		//UIWindow ejemplo = new UIWindow();
 		//ejemplo.Simular();
 		
+		//StatusManager manager = new StatusManager();
+		Simulator sim = Simulator.getInstance();
+		
+		
+		//sim.addObserver(manager);
+		//sim.addObserver(controller);
+		
+		Thread simThread = new Thread(sim);
+		simThread.start();
+		
+		/*
 		System.out.println("Di las palabras.");
 		
 		int clave_prueba = 12;
@@ -52,6 +65,6 @@ public class Main {
 		else
 			System.out.println("NO_Dos");
 		//Arrays.stream(int_array).filter(x->x==clave_prueba).forEach(x->bandera=0);
-		
+		*/
 	}
 }
