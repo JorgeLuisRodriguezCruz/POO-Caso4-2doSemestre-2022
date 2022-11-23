@@ -6,10 +6,10 @@ import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
 import proyectiles.BolaFuego;
 
-public class TijeraVoladora extends Weapon implements Serializable{
+public class LatigoElemental extends Weapon implements Serializable{
 	BolaFuego tijeraQuemada;
 
-	public TijeraVoladora(int pSpeed, int pNivel) {
+	public LatigoElemental(int pSpeed, int pNivel) {
 		super(pSpeed, pNivel, 5);
 		this.tijeraQuemada = null;
 	}
@@ -17,7 +17,7 @@ public class TijeraVoladora extends Weapon implements Serializable{
 	@Override
 	protected void triggerWeapon(int pPosX, int pPosY, ORIENTATION pDirection) {
 		this.tijeraQuemada = new BolaFuego(this.level, pDirection, pPosX, pPosY, this.attackDistance);
-		//this.tijeraQuemada.move();
+		this.tijeraQuemada.move();
 	
 	}
 }
