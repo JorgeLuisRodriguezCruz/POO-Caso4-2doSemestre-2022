@@ -90,7 +90,7 @@ public class PX0 extends IRobot implements IObserver{
 	
 	@Override
 	public void update(Observable pObservable, Object args) {
-		SimulatorReport simReport = (SimulatorReport)arg;
+		SimulatorReport simReport = (SimulatorReport)args;
 		simReport.posX1= posX;
 		simReport.posX1= posY; 
 	}
