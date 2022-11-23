@@ -77,5 +77,4 @@ public abstract class IRobot implements IConstants {
 		weapons[weaponIndex] = pStrike;
 		weaponIndex=++weaponIndex%WEAPONS_PER_ROBOT;
 	}
-	
 }

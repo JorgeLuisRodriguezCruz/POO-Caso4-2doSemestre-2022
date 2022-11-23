@@ -1,4 +1,4 @@
-package Interface;
+package UI;
 
 import utils.IObserver;
 import utils.Observable;
@@ -16,5 +16,4 @@ public class UIController implements IObserver{
 		// TODO Auto-generated method stub
 		
 	}
-
 }
