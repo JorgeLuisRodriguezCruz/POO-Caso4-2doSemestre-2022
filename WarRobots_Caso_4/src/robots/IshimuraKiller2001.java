@@ -1,6 +1,7 @@
 package robots;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import common.robotBase.Weapon;
 import utils.IObserver;
 import utils.Observable;
 
-public class IshimuraKiller2001 extends IRobot implements IObserver{
+public class IshimuraKiller2001 extends IRobot implements IObserver, Serializable{
 	private int nivel;
 
 	public IshimuraKiller2001(int pNnivel, int pEnergy, int pVelocidad) {
@@ -64,10 +65,22 @@ public class IshimuraKiller2001 extends IRobot implements IObserver{
 
 	@Override
 	public void update(Observable pObservable, Object args) {
+		/*
 		SimulatorReport simReport = (SimulatorReport)args;
 		simReport.posX1= posX;
-		simReport.posX1= posY; 
+		simReport.posX1= posY;
+		*/
 	}
+
+	public int getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}
+	
+	
 }
 
 

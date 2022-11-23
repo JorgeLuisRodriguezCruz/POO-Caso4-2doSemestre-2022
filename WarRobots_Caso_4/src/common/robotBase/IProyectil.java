@@ -2,13 +2,13 @@ package common.robotBase;
 
 public class IProyectil {
 	private int nivel;
-	private MOVEMENT direccion_Movimiento;
+	private ORIENTATION direccion_Movimiento;
 	private int pos_X;
 	private int pos_Y;
 	private int distancia;
 	private String URL_Proyecil;
 	
-	public IProyectil(int pNivel, MOVEMENT pDireccion_Movimiento, int pPos_X, int pPos_Y, int pDistancia, String pURL_Proyecil) {
+	public IProyectil(int pNivel, ORIENTATION pDireccion_Movimiento, int pPos_X, int pPos_Y, int pDistancia, String pURL_Proyecil) {
 		
 		this.nivel = pNivel;
 		this.direccion_Movimiento = pDireccion_Movimiento;
