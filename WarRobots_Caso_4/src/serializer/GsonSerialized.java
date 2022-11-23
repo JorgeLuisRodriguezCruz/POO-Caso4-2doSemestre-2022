@@ -54,7 +54,7 @@ public class GsonSerialized {
 			image = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\imagenes\\Imagenes.json"), Images.class);
 			System.out.println("Background: "+ image.getBackground()+"\n Robot1: "+image.getRobot1());
 		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
-			e.printStackTrace();
+			((Throwable) e).printStackTrace();
 		}
 		
 		

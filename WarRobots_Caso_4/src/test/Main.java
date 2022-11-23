@@ -1,13 +1,11 @@
 package test;
 
 import Interface.UIWindow;
-import controller.ControllerArena;
+import controller.Controller;
 import serializer.GsonSerialized;
-import vista.PantallaArena;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import UI.UIWindow;
 import serializer.GsonSerialized;
 
 public class Main {
