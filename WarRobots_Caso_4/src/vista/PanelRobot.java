@@ -23,8 +23,8 @@ public class PanelRobot extends JPanel{
 
 	public PanelRobot () {
 		this.fondo = new ImageIcon(getClass().getResource( this.NOMBRE_IMAGEN_ENTRADA )).getImage();
-		this.posicion_X = 100;
-		this.posicion_Y = 50;
+		this.posicion_X = 450;
+		this.posicion_Y = 500;
 	}
 	
 	@Override
@@ -50,11 +50,11 @@ public class PanelRobot extends JPanel{
 		int ancho = this.imagen_Robot.getWidth();
 		int alto = this.imagen_Robot.getHeight();
 		
-		BufferedImage rotated = new BufferedImage(ancho, alto, this.imagen_Robot.getType());  
+		BufferedImage rotated = new BufferedImage(ancho, alto, BufferedImage.TYPE_INT_RGB);
 	    Graphics2D graphic = rotated.createGraphics();
 	    graphic.rotate(Math.toRadians(pAngulo), ancho/2, alto/2);
 	    graphic.drawImage (this.imagen_Robot, null, 0, 0);
-	    //graphic.drawImage(imagen_Robot, this.posicion_X, this.posicion_Y, 80, 80, null);
+	    //graphic.drawImage(this.fondo, this.posicion_X, this.posicion_Y, 80, 80, null);
 	    //graphic.dispose();
 	    //this.repaint();
 	    try {

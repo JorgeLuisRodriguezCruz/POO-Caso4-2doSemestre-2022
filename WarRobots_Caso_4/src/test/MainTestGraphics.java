@@ -1,5 +1,7 @@
 package test;
 
+import java.util.ArrayList;
+
 import controller.Controller;
 import vista.PanelRobot;
 import vista.Pantalla;
@@ -14,7 +16,7 @@ public class MainTestGraphics {
 		contol.setWindow(ves);
 		
 		//ves.moveRobot(150, 300);
-		
+				
 		System.out.println("Final");
 		
 	}
