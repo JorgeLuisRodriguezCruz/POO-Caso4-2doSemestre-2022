@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/Poo/Caso #4/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/gson-2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/guava-primitives-r03.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

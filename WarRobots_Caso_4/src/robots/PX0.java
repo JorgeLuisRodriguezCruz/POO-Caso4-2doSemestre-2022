@@ -121,17 +121,33 @@ public class PX0 extends IRobot implements IObserver{
 		simReport.posX1= posX;
 		simReport.posX1= posY;
 		if(numeroRobot==1) {
-			Stream<Boolean> stream = new AbstractList<Boolean>() {
+			Stream<Boolean> stream1 = new AbstractList<Boolean>() {
 				  public Boolean get(int index) {return (simReport.strikes1[index]);}
 				  public int size() {return simReport.strikes1.length;}
 				}.stream();
-			stream.forEach(x-> x= strikes[Booleans.indexOf(simReport.strikes1, x)].isEnabled() ); //
-			//simReport.weapons1=;
+			stream1.forEach(x-> x= strikes[Booleans.indexOf(simReport.strikes1, x)].isEnabled() );
+			
+			Stream<Boolean> stream2 = new AbstractList<Boolean>() {
+				  public Boolean get(int index) {return (simReport.weapon1[index]);}
+				  public int size() {return simReport.weapon1.length;}
+				}.stream();
+			stream2.forEach(x-> x= weapons[Booleans.indexOf(simReport.weapon1, x)].isEnabled() );
+			
 		}else if(numeroRobot==2){
 			
+			Stream<Boolean> stream3 = new AbstractList<Boolean>() {
+				  public Boolean get(int index) {return (simReport.strikes2[index]);}
+				  public int size() {return simReport.strikes2.length;}
+				}.stream();
+			stream3.forEach(x-> x= strikes[Booleans.indexOf(simReport.strikes2, x)].isEnabled() );
+			
+			Stream<Boolean> stream4 = new AbstractList<Boolean>() {
+				  public Boolean get(int index) {return (simReport.weapon2[index]);}
+				  public int size() {return simReport.weapon2.length;}
+				}.stream();
+			stream4.forEach(x-> x= weapons[Booleans.indexOf(simReport.weapon2, x)].isEnabled() );
+			
 		}
-		//simReport.strikes1.stream().;
-		//simReport.weapon1=;
 		
 	}
 	
