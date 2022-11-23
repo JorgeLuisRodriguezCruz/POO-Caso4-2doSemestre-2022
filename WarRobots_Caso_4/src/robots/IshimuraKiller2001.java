@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import common.robotBase.IRobot;
+import common.robotBase.MOVEMENT;
 import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
 import utils.IObserver;
@@ -15,8 +16,8 @@ import utils.Observable;
 public class IshimuraKiller2001 extends IRobot implements IObserver, Serializable{
 	private int nivel;
 
-	public IshimuraKiller2001(int pNnivel, int pEnergy) {
-		super(ORIENTATION.SOUTH);
+	public IshimuraKiller2001(int pNnivel, int pEnergy, int pVelocidad) {
+		super(ORIENTATION.SOUTH, pVelocidad);
 		
 		this.nivel = pNnivel;
 		this.energy = pEnergy;

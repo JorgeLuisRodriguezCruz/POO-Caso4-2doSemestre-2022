@@ -18,9 +18,14 @@ public class Main {
 		
 		//GsonSerialized g=new GsonSerialized();
 
-		//UIWindow ejemplo = new UIWindow();
-		//ejemplo.Simular();
+		UIWindow ejemplo = new UIWindow();
+		ejemplo.Simular();
 		
+		
+		
+		
+		
+		/*
 		//StatusManager manager = new StatusManager();
 		Simulator sim = Simulator.getInstance();
 		
@@ -30,6 +35,14 @@ public class Main {
 		
 		Thread simThread = new Thread(sim);
 		simThread.start();
+		
+		*/
+		
+		
+		
+		
+		
+		
 		
 		/*
 		System.out.println("Di las palabras.");

@@ -2,8 +2,7 @@ package simulation;
 
 import common.IConstants;
 import serializer.GsonSerialized;
-import src.simulation.Exception;
-import src.simulation.SimulatorReport;
+import simulation.SimulatorReport;
 import utils.Observable;
 
 public class Simulator extends Observable implements Runnable, IConstants{
@@ -32,7 +31,7 @@ public class Simulator extends Observable implements Runnable, IConstants{
 			try {
 
 				
-				Thread.sleep();
+				Thread.sleep(200);
 				
 				
 				
@@ -50,7 +49,9 @@ public class Simulator extends Observable implements Runnable, IConstants{
 		
 	}
 
-
+	public void stop() {
+		running = false;
+	}
 
 	
 	
