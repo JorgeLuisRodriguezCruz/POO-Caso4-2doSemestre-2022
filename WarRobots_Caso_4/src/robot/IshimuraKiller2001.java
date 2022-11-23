@@ -1,4 +1,4 @@
-package robots;
+package robot;
 
 import java.awt.Graphics;
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package imagenes;
 
-public class Images {
+public class ImageData {
 	String rutaImagenes;
 	String robot1;
 	String Weapon1;

@@ -31,7 +31,7 @@ public class Simulator extends Observable implements Runnable, IConstants{
 			try {
 
 				
-				Thread.sleep(200);
+				Thread.sleep(50);
 				
 				
 				

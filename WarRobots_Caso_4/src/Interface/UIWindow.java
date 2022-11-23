@@ -43,7 +43,7 @@ ImagenTrampa2
 public class UIWindow  implements KeyListener, IConstants{
 	
 	
-	public static String rutaImagenes = "C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\Imagenes\\";
+	public static String rutaImagenes = "C:\\Users\\Usuario\\Desktop\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\imagenes\\";
 	public int dir = 0;
 	public boolean dirIzq = false;
 	public boolean dirDer = false;
@@ -70,7 +70,7 @@ public class UIWindow  implements KeyListener, IConstants{
 			myPicture=resize(myPicture,125,125);
 			myPicture2 = ImageIO.read(new File(rutaImagenes + "Dano1.png"));
 			myPicture2=resize(myPicture2,125,125);
-			myPicture3 = ImageIO.read(new File(rutaImagenes + "LanzaLlamas.png"));
+			myPicture3 = ImageIO.read(new File(rutaImagenes + "Misil.png"));
 			myPicture3=resize(myPicture3,300,125);
 		} catch (IOException e) {
 			e.printStackTrace();

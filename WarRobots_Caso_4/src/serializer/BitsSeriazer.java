@@ -10,8 +10,8 @@ import java.lang.invoke.VolatileCallSite;
 import customizedWeapon.LatigoElemental;
 import customizedWeapon.TijeraVoladora;
 import customizedWeapon.VolcanMiniatura;
-import proyectiles.BolaFuego;
-import robots.IshimuraKiller2001;
+import proyectil.BolaFuego;
+import robot.IshimuraKiller2001;
 
 public class BitsSeriazer {
 	private String direccion_RobotIshimura;

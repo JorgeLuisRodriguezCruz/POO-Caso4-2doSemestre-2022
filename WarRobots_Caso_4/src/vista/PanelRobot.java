@@ -58,7 +58,7 @@ public class PanelRobot extends JPanel{
 	    //graphic.dispose();
 	    //this.repaint();
 	    try {
-	    	File imagenRotada = new File("C:/Users/Usuario/Documents/GitHub/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/src/RufussRotado.png"); 
+	    	File imagenRotada = new File("C:\\Users\\Usuario\\Desktop\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\imagenes\\RufussRotado.png"); 
             this.imagen_Robot = rotated;
             ImageIO.write(rotated, "png", imagenRotada);
             

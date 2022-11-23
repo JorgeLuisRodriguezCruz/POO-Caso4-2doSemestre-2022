@@ -1,6 +1,6 @@
 package test;
 
-import robots.IshimuraKiller2001;
+import robot.IshimuraKiller2001;
 import serializer.BitsSeriazer;
 
 public class TestBitSerealizer {

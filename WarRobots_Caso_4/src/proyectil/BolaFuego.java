@@ -1,4 +1,4 @@
-package proyectiles;
+package proyectil;
 
 import java.io.Serializable;
 

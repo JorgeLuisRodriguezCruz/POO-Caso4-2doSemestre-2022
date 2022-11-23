@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
-import proyectiles.BolaFuego;
+import proyectil.BolaFuego;
 
 public class TijeraVoladora extends Weapon implements Serializable{
 	BolaFuego tijeraQuemada;

@@ -16,10 +16,10 @@ public class Main {
 		//ControllerArena controlador = new ControllerArena();
 		//PantallaArena vista = new PantallaArena("Titulo de ejemplo", controlador);
 		
-		//GsonSerialized g=new GsonSerialized();
+		GsonSerialized g=new GsonSerialized();
 
-		UIWindow ejemplo = new UIWindow();
-		ejemplo.Simular();
+		//UIWindow ejemplo = new UIWindow();
+		//ejemplo.Simular();
 		
 		
 		
