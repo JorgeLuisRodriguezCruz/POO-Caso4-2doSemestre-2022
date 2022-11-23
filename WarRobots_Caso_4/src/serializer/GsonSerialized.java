@@ -25,7 +25,6 @@ public class GsonSerialized {
 		Gson gson = new GsonBuilder()
 	            .setPrettyPrinting()
 	            .serializeNulls()
-	            //.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
 	            .create();
 		
 		
