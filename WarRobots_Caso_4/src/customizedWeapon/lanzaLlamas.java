@@ -3,9 +3,9 @@ package customizedWeapon;
 import common.robotBase.ORIENTATION;
 import common.robotBase.Weapon;
 
-public class lanzaLlamas extends Weapon {
+public class LanzaLlamas extends Weapon {
 
-	public lanzaLlamas(int pSpeed, int pLevel, int pAttackDistance) {
+	public LanzaLlamas(int pSpeed, int pLevel, int pAttackDistance) {
 		super(pSpeed, pLevel, pAttackDistance);
 	}
 
@@ -13,5 +13,4 @@ public class lanzaLlamas extends Weapon {
 	protected void triggerWeapon(int pPosX, int pPosY, ORIENTATION pDirection) {
 		
 	}
-	
 }
