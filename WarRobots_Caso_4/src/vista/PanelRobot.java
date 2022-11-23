@@ -2,7 +2,8 @@ package vista;
  
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image; 
+import java.awt.Image;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class PanelRobot extends JPanel{
+	private String NOMBRE_IMAGEN_ENTRADA = "/Rufuss.png";
 	private BufferedImage imagen_Robot;
 	private Image fondo;
 	private int posicion_X;
@@ -20,7 +22,7 @@ public class PanelRobot extends JPanel{
 	
 
 	public PanelRobot () {
-		this.fondo = new ImageIcon(getClass().getResource("/Rufuss.png")).getImage();
+		this.fondo = new ImageIcon(getClass().getResource( this.NOMBRE_IMAGEN_ENTRADA )).getImage();
 		this.posicion_X = 100;
 		this.posicion_Y = 50;
 	}
@@ -43,6 +45,8 @@ public class PanelRobot extends JPanel{
 	
 	public void rotar (int pAngulo) {
 		
+		//this.fondo = new ImageIcon(getClass().getResource("/Rufuss.png")).getImage();
+		
 		int ancho = this.imagen_Robot.getWidth();
 		int alto = this.imagen_Robot.getHeight();
 		
@@ -50,18 +54,21 @@ public class PanelRobot extends JPanel{
 	    Graphics2D graphic = rotated.createGraphics();
 	    graphic.rotate(Math.toRadians(pAngulo), ancho/2, alto/2);
 	    graphic.drawImage (this.imagen_Robot, null, 0, 0);
-	    //graphic.drawImage(imagen_Robot, this.posicion_X, this.posicion_Y, 80, 80, this);
+	    //graphic.drawImage(imagen_Robot, this.posicion_X, this.posicion_Y, 80, 80, null);
 	    //graphic.dispose();
 	    //this.repaint();
 	    try {
 	    	File imagenRotada = new File("C:/Users/Usuario/Documents/GitHub/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/src/RufussRotado.png"); 
+            this.imagen_Robot = rotated;
             ImageIO.write(rotated, "png", imagenRotada);
+            
             this.fondo = new ImageIcon(getClass().getResource("/RufussRotado.png")).getImage();
-            //this.repaint();
+            this.repaint();
             
 	    }catch(IOException e){
 	    	System.out.println("Fallo la rotacion");
 	    }
+	    
 	}
 
 	public int getPosicion_X() {

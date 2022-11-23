@@ -32,7 +32,7 @@ public class Controller {
 				break;
 			case 38: //Arriba
 				this.controlledFrame.moveRobot(pPanel.getPosicion_X(), pPanel.getPosicion_Y() - 8);//pFigura.setBounds(pFigura.getX(), pFigura.getY() - 8, 250, 20);
-				pPanel.rotar(100);
+				pPanel.rotar(90);
 				break;
 			case 40: //Abajo
 				this.controlledFrame.moveRobot(pPanel.getPosicion_X(), pPanel.getPosicion_Y() + 8);//pFigura.setBounds(pFigura.getX(), pFigura.getY() + 8, 250, 20);
