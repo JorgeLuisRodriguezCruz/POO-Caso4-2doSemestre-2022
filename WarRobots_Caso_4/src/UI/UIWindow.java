@@ -43,7 +43,8 @@ ImagenTrampa2
 public class UIWindow  implements KeyListener, IConstants{
 	
 	
-	public static String rutaImagenes = "C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\Imagenes\\";
+	//public static String rutaImagenes = "C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\Imagenes\\";
+	public static String rutaImagenes = "C:/Users/Usuario/Documents/GitHub/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/src/imagenes/";
 	public int dir = 0;
 	public boolean dirIzq = false;
 	public boolean dirDer = false;

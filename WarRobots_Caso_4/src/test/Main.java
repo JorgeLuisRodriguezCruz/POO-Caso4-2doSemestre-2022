@@ -14,9 +14,9 @@ public class Main {
 		
 		//GsonSerialized g=new GsonSerialized();
 
-		//UIWindow ejemplo = new UIWindow();
-		//ejemplo.Simular();
-		
+		UIWindow ejemplo = new UIWindow();
+		ejemplo.Simular();
+		/*
 		System.out.println("Di las palabras.");
 		
 		int clave_prueba = 12;
@@ -49,6 +49,7 @@ public class Main {
 			System.out.println("SI_Dos");
 		else
 			System.out.println("NO_Dos");
+		*/
 		//Arrays.stream(int_array).filter(x->x==clave_prueba).forEach(x->bandera=0);
 		
 	}
