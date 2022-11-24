@@ -1,28 +1,31 @@
 package vista;
- 
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.awt.RenderingHints;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon; 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-public class PanelRobot extends JPanel{
-	private String NOMBRE_IMAGEN_ENTRADA = "/Rufuss.png";
+public class PanelProyectil extends JPanel{
+	private String NOMBRE_IMAGEN_ENTRADA;
+	private String NOMBRE_IMAGEN_SALIDA;
 	private BufferedImage imagen_Robot;
 	private Image fondo;
 	private int posicion_X;
 	private int posicion_Y;
 	
 
-	public PanelRobot () {
+	public PanelProyectil () {
+		this.NOMBRE_IMAGEN_ENTRADA = "/FireBall.png";
+		this.NOMBRE_IMAGEN_SALIDA = "/FireBallRotado.png";//"/C:/Users/Usuario/Documents/GitHub/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/src/FireBallRotado.png";
 		this.fondo = new ImageIcon(getClass().getResource( this.NOMBRE_IMAGEN_ENTRADA )).getImage();
-		this.posicion_X = 450;
+		this.posicion_X = 650;
 		this.posicion_Y = 500;
 	}
 	
@@ -44,8 +47,6 @@ public class PanelRobot extends JPanel{
 	
 	public void rotar (int pAngulo) {
 		
-		//this.fondo = new ImageIcon(getClass().getResource("/Rufuss.png")).getImage();
-		
 		int ancho = this.imagen_Robot.getWidth();
 		int alto = this.imagen_Robot.getHeight();
 		
@@ -53,15 +54,13 @@ public class PanelRobot extends JPanel{
 	    Graphics2D graphic = rotated.createGraphics();
 	    graphic.rotate(Math.toRadians(pAngulo), ancho/2, alto/2);
 	    graphic.drawImage (this.imagen_Robot, null, 0, 0);
-	    //graphic.drawImage(this.fondo, this.posicion_X, this.posicion_Y, 80, 80, null);
-	    //graphic.dispose();
-	    //this.repaint();
+	    
 	    try {
-	    	File imagenRotada = new File("C:\\Users\\Usuario\\Desktop\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\imagenes\\RufussRotado.png"); 
+	    	File imagenRotada = new File( this.NOMBRE_IMAGEN_SALIDA ); 
             this.imagen_Robot = rotated;
             ImageIO.write(rotated, "png", imagenRotada);
             
-            this.fondo = new ImageIcon(getClass().getResource("/RufussRotado.png")).getImage();
+            this.fondo = new ImageIcon(getClass().getResource( this.NOMBRE_IMAGEN_ENTRADA )).getImage();
             this.repaint();
             
 	    }catch(IOException e){
@@ -69,7 +68,7 @@ public class PanelRobot extends JPanel{
 	    }
 	    
 	}
-	
+
 	public int getPosicion_X() {
 		return posicion_X;
 	}
@@ -85,6 +84,4 @@ public class PanelRobot extends JPanel{
 	public void setPosicion_Y(int pPosicion_Y) {
 		this.posicion_Y = pPosicion_Y;
 	}
-	
-	
 }

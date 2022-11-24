@@ -77,6 +77,7 @@ public class Main {
 			System.out.println("SI_Dos");
 		else
 			System.out.println("NO_Dos");
+		*/
 		//Arrays.stream(int_array).filter(x->x==clave_prueba).forEach(x->bandera=0);
 		*/
 	}
