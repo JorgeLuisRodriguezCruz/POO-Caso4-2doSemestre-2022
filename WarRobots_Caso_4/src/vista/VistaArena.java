@@ -33,6 +33,7 @@ public class VistaArena extends JFrame implements KeyListener {
 		this.setSize(1080, 720); 
 		this.setResizable(false);
 		this.setVisible(true);
+		this.setLayout(null);
 		
 		this.controlador = pControlador;
 		this.NOMBRE_ARCHIVO_ROBOT = pNombreArchivoRobot;
@@ -43,16 +44,6 @@ public class VistaArena extends JFrame implements KeyListener {
 		this.add(this.proyectil);
 		this.add(this.robot);
 		
-
-		
-		System.out.println("***********");
-		System.out.println("x1 -> "+this.proyectil.getBounds().x + " y1 -> " + this.proyectil.getBounds().y);
-		System.out.println("x1 -> "+this.proyectil.getX() + " y1 -> " + this.proyectil.getY());
-		System.out.println("---------------");
-		System.out.println("x2 -> "+this.robot.getBounds().x + " y2 -> " + this.robot.getBounds().y);
-		System.out.println("x2 -> "+this.robot.getX() + " y2 -> " + this.robot.getY());
-		System.out.println("***********");
-		
 		this.inicializar();
     	this.addKeyListener(this);
 	}
@@ -61,20 +52,12 @@ public class VistaArena extends JFrame implements KeyListener {
 		this.proyectil.setBounds(60, 90, 30, 30);
 		this.robot.setBounds(60, 60, 60, 60);
 		
-		System.out.println("***********");
-		System.out.println("x1 -> "+this.proyectil.getBounds().x + " y1 -> " + this.proyectil.getBounds().y);
-		System.out.println("x1 -> "+this.proyectil.getX() + " y1 -> " + this.proyectil.getY());
-		System.out.println("---------------");
-		System.out.println("x2 -> "+this.robot.getBounds().x + " y2 -> " + this.robot.getBounds().y);
-		System.out.println("x2 -> "+this.robot.getX() + " y2 -> " + this.robot.getY());
-		System.out.println("***********");
-		
 		BufferedImage imagen_Robot = null;
 		BufferedImage imagen_Proyectil = null;
 		
 		try {
 			imagen_Proyectil = ImageIO.read(new File ( this.NOMBRE_ARCHIVO_PROYECTIL ));
-			imagen_Proyectil = this.controlador.redimencionar(imagen_Proyectil, 60, 60);
+			imagen_Proyectil = this.controlador.redimencionar(imagen_Proyectil, 30, 30);
 			
 			imagen_Robot = ImageIO.read(new File ( this.NOMBRE_ARCHIVO_ROBOT ));
 			imagen_Robot = this.controlador.redimencionar(imagen_Robot, 60, 60);
@@ -82,17 +65,8 @@ public class VistaArena extends JFrame implements KeyListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		this.proyectil.setIcon(new ImageIcon( imagen_Proyectil ));
-		//this.remove(this.proyectil);
 		this.robot.setIcon(new ImageIcon( imagen_Robot ));
-		
-		System.out.println("***********");
-		System.out.println("x1 -> "+this.proyectil.getBounds().x + " y1 -> " + this.proyectil.getBounds().y);
-		System.out.println("x1 -> "+this.proyectil.getX() + " y1 -> " + this.proyectil.getY());
-		System.out.println("---------------");
-		System.out.println("x2 -> "+this.robot.getBounds().x + " y2 -> " + this.robot.getBounds().y);
-		System.out.println("x2 -> "+this.robot.getX() + " y2 -> " + this.robot.getY());
-		System.out.println("***********");
+		this.proyectil.setIcon(new ImageIcon( imagen_Proyectil ));//this.remove(this.proyectil);
 	}
 
 	public JLabel getRobot() {
@@ -119,20 +93,11 @@ public class VistaArena extends JFrame implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		//this.control.mover(e.getKeyCode(), this.panel);
-		//this.remove(this.robot);
-		//this.remove(this.proyectil);
+		this.remove(this.robot);
+		this.remove(this.proyectil);
 		
-		System.out.println("---------------");
-		System.out.println("x1 -> "+this.proyectil.getBounds().x + " y1 -> " + this.proyectil.getBounds().y);
-		System.out.println("x1 -> "+this.proyectil.getX() + " y1 -> " + this.proyectil.getY());
-		System.out.println("---------------");
-		System.out.println("x2 -> "+this.robot.getBounds().x + " y2 -> " + this.robot.getBounds().y);
-		System.out.println("x2 -> "+this.robot.getX() + " y2 -> " + this.robot.getY());
-		System.out.println("---------------");
 		
-		this.robot.setLocation(60, 60);
-		
-		//this.controlador.mover(e.getKeyCode());
+		this.controlador.mover(e.getKeyCode());
 	}
 
 	@Override
