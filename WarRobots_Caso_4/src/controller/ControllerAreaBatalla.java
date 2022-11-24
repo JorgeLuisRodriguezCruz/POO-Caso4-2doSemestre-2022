@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+import manager.StatusManager;
 import simulation.SimulatorReport;
 import utils.IObserver;
 import utils.Observable;
@@ -12,8 +13,9 @@ import vista.VistaArena;
 public class ControllerAreaBatalla implements IObserver{
 	private VistaArena vista_Controlada;
 	
-	public ControllerAreaBatalla  () {
+	public ControllerAreaBatalla  (StatusManager pManager) {
 		this.vista_Controlada = null;
+		this.manager=pManager;
 	}
 	
 	public void setWindow (VistaArena pFrame) {
@@ -71,6 +73,7 @@ public class ControllerAreaBatalla implements IObserver{
 	private int robotY;
 	private int proyectilX;
 	private int proyectilY;
+	private StatusManager manager; 
 	@Override
 	public void update(Observable pObservable, Object args) {
 		SimulatorReport simReport = (SimulatorReport)args;
