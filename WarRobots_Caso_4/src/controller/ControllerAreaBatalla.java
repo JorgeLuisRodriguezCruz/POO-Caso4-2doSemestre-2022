@@ -4,9 +4,12 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+import simulation.SimulatorReport;
+import utils.IObserver;
+import utils.Observable;
 import vista.VistaArena;
 
-public class ControllerAreaBatalla {
+public class ControllerAreaBatalla implements IObserver{
 	private VistaArena vista_Controlada;
 	
 	public ControllerAreaBatalla  () {
@@ -80,6 +83,22 @@ public class ControllerAreaBatalla {
 				//pPanel.rotar(270);
 				break;
 		}
+	}
+
+	
+	
+	private int robotX;
+	private int robotY;
+	private int proyectilX;
+	private int proyectilY;
+	@Override
+	public void update(Observable pObservable, Object args) {
+		SimulatorReport simReport = (SimulatorReport)args;
+		robotX= simReport.posX1;
+		robotY= simReport.posX2;
+		proyectilX=simReport.proyectil1X;
+		proyectilY=simReport.proyectil1Y;
+		
 	}
 
 }

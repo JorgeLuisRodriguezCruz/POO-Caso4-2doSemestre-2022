@@ -15,4 +15,7 @@ public class SimulatorReport implements IConstants{
 	
 	public int posTrapsX[]= new int[2];
 	public int posTrapsY[]= new int[2];
+	
+	public int proyectil1X;
+	public int proyectil1Y;
 }

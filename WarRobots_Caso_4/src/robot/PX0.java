@@ -1,12 +1,10 @@
 package robot;
 
 import java.awt.Graphics;
-import java.lang.reflect.Array;
 import java.time.LocalTime;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 import common.IRobot;
@@ -24,19 +22,26 @@ public class PX0 extends IRobot implements IObserver{
 	int pixRecorridos;
 	int numeroRobot;
 	
-	/*
-	int energy;
-	protected int posX;
-	protected int posY;
-	protected int strikeIndex;
-	protected int weaponIndex;
-	protected int speed;
-	protected Weapon weapons[];
-	protected Weapon strikes[];
-	protected DamageLevel directionsdamage[];
-	protected ORIENTATION currentOrientation;
-	*/
-	
+	public int getPixRecorridos() {
+		return pixRecorridos;
+	}
+
+
+	public void setPixRecorridos(int pixRecorridos) {
+		this.pixRecorridos = pixRecorridos;
+	}
+
+
+	public int getNumeroRobot() {
+		return numeroRobot;
+	}
+
+
+	public void setNumeroRobot(int numeroRobot) {
+		this.numeroRobot = numeroRobot;
+	}
+
+
 	public PX0(){
 		
 		DamageLevel up = new DamageLevel();

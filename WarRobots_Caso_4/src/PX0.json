@@ -1,0 +1,10 @@
+{
+  "energy":100,
+  "posX":900,
+  "posY":350,
+  "strikeIndex":0,
+  "weaponIndex":0,
+  "speed":8,
+  "pixRecorridos":0,
+  "numeroRobot":1
+}

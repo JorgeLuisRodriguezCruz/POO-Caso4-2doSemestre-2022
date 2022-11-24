@@ -1,6 +1,6 @@
 package imagenes;
 
-public class ImageData {
+public class GeneralData {
 	String rutaImagenes;
 	String robot1;
 	String Weapon1;
@@ -19,6 +19,92 @@ public class ImageData {
 	String trap2;
 	String trap3;
 	
+	String strike1;
+	int speedS1;
+	int levelS1;
+	int distanceS1;
+	String strike2;
+	int speedS2;
+	int levelS2;
+	int distanceS2;
+	String weapon;
+	int speedW1;
+	int levelW1;
+	int distanceW1;
+
+	
+	public int getSpeedS1() {
+		return speedS1;
+	}
+	public void setSpeedS1(int speedS1) {
+		this.speedS1 = speedS1;
+	}
+	public int getLevelS1() {
+		return levelS1;
+	}
+	public void setLevelS1(int levelS1) {
+		this.levelS1 = levelS1;
+	}
+	public int getDistanceS1() {
+		return distanceS1;
+	}
+	public void setDistanceS1(int distanceS1) {
+		this.distanceS1 = distanceS1;
+	}
+	public int getSpeedS2() {
+		return speedS2;
+	}
+	public void setSpeedS2(int speedS2) {
+		this.speedS2 = speedS2;
+	}
+	public int getLevelS2() {
+		return levelS2;
+	}
+	public void setLevelS2(int levelS2) {
+		this.levelS2 = levelS2;
+	}
+	public int getDistanceS2() {
+		return distanceS2;
+	}
+	public void setDistanceS2(int distanceS2) {
+		this.distanceS2 = distanceS2;
+	}
+	public int getSpeedW1() {
+		return speedW1;
+	}
+	public void setSpeedW1(int speedW1) {
+		this.speedW1 = speedW1;
+	}
+	public int getLevelW1() {
+		return levelW1;
+	}
+	public void setLevelW1(int levelW1) {
+		this.levelW1 = levelW1;
+	}
+	public int getDistanceW1() {
+		return distanceW1;
+	}
+	public void setDistanceW1(int distanceW1) {
+		this.distanceW1 = distanceW1;
+	}
+	public String getStrike1() {
+		return strike1;
+	}
+	public void setStrike1(String strike1) {
+		this.strike1 = strike1;
+	}
+	public String getStrike2() {
+		return strike2;
+	}
+	public void setStrike2(String strike2) {
+		this.strike2 = strike2;
+	}
+	public String getWeapon() {
+		return weapon;
+	}
+	public void setWeapon(String weapon) {
+		this.weapon = weapon;
+	}
 	public String getRutaImagenes() {
 		return rutaImagenes;
 	}

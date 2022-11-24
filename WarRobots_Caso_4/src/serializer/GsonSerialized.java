@@ -11,19 +11,21 @@ import com.google.gson.Gson;
 
 import common.IRobot;
 import common.robotBase.Weapon;
-import imagenes.ImageData;
+import imagenes.GeneralData;
+import robot.PX0;
 
 
 public class GsonSerialized {
-	public ImageData image;
+	public GeneralData data;
+	public Gson gson;
+	public PX0 robot;
+	
 	
 	public GsonSerialized() {
-		
-		
 		ArrayList <Weapon> arcenal = new ArrayList <Weapon>();
-		//IRobot p;
 		
-		Gson gson = new GsonBuilder()
+		
+		gson = new GsonBuilder()
 	            .setPrettyPrinting()
 	            .serializeNulls()
 	            .create();
@@ -43,18 +45,25 @@ public class GsonSerialized {
 		*/
 		
 		try {
-			image = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\imagenes\\Imagenes.json"), ImageData.class);
-			System.out.println("Background: "+ image.getBackground()+"\n Robot1: "+image.getRobot1());
+			data = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\Poo\\Caso #4\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\imagenes\\Imagenes.json"), GeneralData.class);
+			System.out.println("Background: "+ data.getBackground()+"\n Robot1: "+data.getRobot1());
 		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
 			((Throwable) e).printStackTrace();
-			image = new ImageData();
+			data = new GeneralData();
 		}
 		
+		try {
+			robot = gson.fromJson(new FileReader("C:\\Users\\Usuario\\Desktop\\POO-Caso4-2doSemestre-2022\\WarRobots_Caso_4\\src\\PX0.json"), PX0.class);
+			System.out.println("Background: "+ data.getBackground()+"\n Robot1: "+data.getRobot1());
+		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
+			((Throwable) e).printStackTrace();
+			robot = new PX0();
+		}
 		
 		
 		//Serializado
 		
-		String jsonString = gson.toJson(image);
+		String jsonString = gson.toJson(data);
 		
 		
 		System.out.println("Converted ImageData object to JSON string:\n" + jsonString);
@@ -62,5 +71,7 @@ public class GsonSerialized {
 	
 		
 	}
+	
+	
 	
 }
