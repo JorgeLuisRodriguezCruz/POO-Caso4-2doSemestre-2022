@@ -22,8 +22,6 @@ public class VistaArena extends JFrame implements KeyListener {
 	private String NOMBRE_ARCHIVO_PROYECTIL;
 	private JLabel robot;
 	private JLabel proyectil;
-	
-//	private JPanel panel_Principal;
 
 	public VistaArena (String pNombreArchivoRobot, String pNombreArchivoProyectil, ControllerAreaBatalla pControlador) {
 		super("Area batalla");
@@ -87,25 +85,17 @@ public class VistaArena extends JFrame implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		//this.control.mover(e.getKeyCode(), this.panel);
 		this.remove(this.robot);
 		this.remove(this.proyectil);
-		
-		
 		this.controlador.mover(e.getKeyCode());
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		//this.control.mover(e.getKeyCode(), this.panel);
-		//this.remove(this.robot);
-		//this.remove(this.proyectil);
-		//this.controlador.mover(e.getKeyCode());
 	}
 
 }

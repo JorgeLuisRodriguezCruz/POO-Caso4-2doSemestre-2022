@@ -14,6 +14,7 @@ import utils.IObserver;
 import utils.Observable;
 
 public class IshimuraKiller2001 extends IRobot implements IObserver, Serializable{
+	private String imagen;
 	private int nivel;
 
 	public IshimuraKiller2001(int pNnivel, int pEnergy, int pVelocidad) {
@@ -21,6 +22,7 @@ public class IshimuraKiller2001 extends IRobot implements IObserver, Serializabl
 		
 		this.nivel = pNnivel;
 		this.energy = pEnergy;
+		this.imagen = "C:/Users/Usuario/Documents/GitHub/POO-Caso4-2doSemestre-2022/WarRobots_Caso_4/src/Rufuss.png";
 	}
 
 	@Override
@@ -79,6 +81,16 @@ public class IshimuraKiller2001 extends IRobot implements IObserver, Serializabl
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	
+	
 	
 	
 }
