@@ -5,7 +5,14 @@ public abstract class ITrap {
 	protected int y;
 	protected String imagen;
 	protected int distancia;
+	protected int pLevel;
 	
+	public int getpLevel() {
+		return pLevel;
+	}
+	public void setpLevel(int pLevel) {
+		this.pLevel = pLevel;
+	}
 	public int getX() {
 		return x;
 	}
